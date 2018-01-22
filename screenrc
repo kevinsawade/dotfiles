@@ -1,0 +1,5 @@
+#~/.screenrc for Kevin
+
+defshell -bash
+
+altscreen on

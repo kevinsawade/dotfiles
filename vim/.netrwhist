@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/home/kevin/hiwi_project/h1ubi/K51/2nd_run/cluster_copy'
+let g:netrw_dirhist_2='/home/kevin/hiwi_project/h1ubi/K51/3rd_run/setup'
+let g:netrw_dirhist_3='/home/kevin/hiwi_project/neural_networks/TDR/results_full'
+let g:netrw_dirhist_4='/home/kevin/cluster_info/Konstanz'
+let g:netrw_dirhist_5='/home/kevin/hiwi_project/h1ubi/K47/6th_run/cluster_copy'
+let g:netrw_dirhist_6='/home/kevin'
