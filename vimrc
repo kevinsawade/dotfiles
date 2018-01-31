@@ -29,25 +29,23 @@ Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
-
-
 " All of your Plugins must be added before the following line
 call vundle#end()
 filetype plugin indent on
 
-"Define Shortcuts for split screen Navigation
-"Ctrl + (h,j,k,l) to move (left, down, up, right)
-"nnoremap <C-J> <C-W><C-J>
-"nnoremap <C-K> <C-W><C-K>
-"nnoremap <C-L> <C-W><C-L>
-"nnoremap <C-H> <C-W><C-H>
-"the above don't work with NERDTree
+" Define Shortcuts for split screen Navigation
+" Ctrl + (h,j,k,l) to move (left, down, up, right)
+" nnoremap <C-J> <C-W><C-J>
+" nnoremap <C-K> <C-W><C-K>
+" nnoremap <C-L> <C-W><C-L>
+" nnoremap <C-H> <C-W><C-H>
+" the above don't work with NERDTree
 nmap <silent> <c-k> :wincmd k<CR>
 nmap <silent> <c-j> :wincmd j<CR>
 nmap <silent> <c-h> :wincmd h<CR>
 nmap <silent> <c-l> :wincmd l<CR>
-"this doesn't also work with nerdtree, but by pressing ctrl-w and the
-"direction keys the splits can be navigated
+" this also doesn't work with nerdtree, but by pressing ctrl-w and the
+" direction keys the splits can be navigated
 
 " Enable syntax highlighting 
 syntax on
@@ -64,50 +62,51 @@ set showcmd
 " Show whitespaces and EOLs
 " set list
  
-"Highlight searches (use Ctrl+L to temporarily turn off highlighting)
+" Highlight searches (use Ctrl+L to temporarily turn off highlighting)
 set hlsearch 
 nnoremap <C-L> :nohl<CR><C-L>
  
-"Use case insensitive search, except when using capital letters
+" Use case insensitive search, except when using capital letters
 set ignorecase 
 set smartcase
  
 " Allow backspacing over autoindent, line breaks and start of insert action
 set backspace=indent,eol,start
  
-"When opening a new line and no filetype-specific indenting is enabled, keep the same indent as the line you're currently on(Useful for READMEs, etc)
+" When opening a new line and no filetype-specific indenting is enabled, keep the same indent as the line you're currently on(Useful for READMEs, etc)
 set autoindent
  
-"Display the cursor position on the last line of the screen or in the status line of a window
+" Display the cursor position on the last line of the screen or in the status line of a window
 set ruler
  
-"Always display the status line, even if only one window is displayed
+" Always display the status line, even if only one window is displayed
 set laststatus=2
  
-"Instead of failing a command because of unsaved changes, instead raise a  dialogue asking if you wish to save changed files 
+" Instead of failing a command because of unsaved changes, instead raise a  dialogue asking if you wish to save changed files 
 set confirm
  
-"Use visual bell instead of beeping when doing something wrong 
+" Use visual bell instead of beeping when doing something wrong 
 set visualbell
  
-"Set the command window height to 2 lines, to avoid many cases of having to press <Enter> to continue  
+" Set the command window height to 2 lines, to avoid many cases of having to press <Enter> to continue  
 set cmdheight=2
  
-"Display line numbers on the left
+" Display line numbers on the left
 set number
  
-"Quickly time out on keycodes, but never time out on mappings 
+" Quickly time out on keycodes, but never time out on mappings 
 set notimeout ttimeout ttimeoutlen=200
  
-"Use F11 to toggle between paste and nopaste
+" Use F11 to toggle between paste and nopaste
 set pastetoggle=<F11>
 
-"Set UTF-8 as standard encoding
+" Set UTF-8 as standard encoding
 set encoding=utf-8
  
-"Allow vim to use the powerline custom symbol font
+" Allow vim to use the powerline custom symbol font
 set guifont=PowerlineSymbols
-"Enable firefox/google chrome like tab navigation
+
+" Enable firefox/google chrome like tab navigation
 nmap <C-S-tab> :tabprevious<CR> 
 nmap <C-tab> :tabnext<CR> 
 map <C-S-tab> :tabprevious<CR> 
@@ -117,18 +116,18 @@ imap <C-tab> <Esc>:tabnext<CR>i
 nmap <C-t> :tabnew<CR> 
 imap <C-t> <Esc>:tabnew<CR>
  
-"Highlight the current line
-"set cursorline
+" Highlight the current line
+" set cursorline
  
-"Share windows clipboard
+" Share windows clipboard
 set clipboard+=unnamed
  
-"Indentation hardtab express settings
-"set shiftwidth=2 
-"set softtabstop=2 
-"set expandtab
+" Indentation hardtab express settings
+" set shiftwidth=2 
+" set softtabstop=2 
+" set expandtab
  
-"Set the color theme to be used 
+" Set the color theme to be used 
 colors default
 
 " Enable folding
@@ -138,25 +137,25 @@ set foldlevel=99
 " Enable folding with the spacebar
 nnoremap <space> za
 
-"see the docstrings in folded code
+" see the docstrings in folded code
 let g:SimpylFold_docstring_preview=1
 
-"Python indentation according to PEP8
+" Python indentation according to PEP8
 au BufNewFile,BufRead *.py set tabstop=4
 au BufNewFile,BufRead *.py set softtabstop=4
 au BufNewFile,BufRead *.py set shiftwidth=4
-"au BufNewFile,BufRead *.py set textwidth=79
+" au BufNewFile,BufRead *.py set textwidth=79 "This makes the line autobreak after 79 lines, which is not wanted
 au BufNewFile,BufRead *.py set expandtab
 au BufNewFile,BufRead *.py set autoindent
 au BufNewFile,BufRead *.py set fileformat=unix
 
-"Flag unnecessary whitespace
-"au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+" Flag unnecessary whitespace
+" au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
-"Fix NerdTree characters
+" Fix NerdTree characters
 let g:NERDTreeDirArrows=0
 
-"Some settings for the YCM server
+" Some settings for the YCM server
 let g:ycm_server_python_interpreter = '/usr/bin/python2'
 let g:ycm_autoclose_preview_window_after_completion=1
 let mapleader=" "
@@ -172,14 +171,14 @@ map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 "  execfile(activate_this, dict(__file__=activate_this))
 "EOF
 
-"make python files look pretty
+" make python files look pretty
 let python_highlight_all=1
 syntax on
 
-"use 256 bit color mode
+" use 256 bit color mode
 set t_Co=256
 
-"different color schemes for different vim modes
+" different color schemes for different vim modes
 if has('gui_running')
   set background=dark
   "colorscheme solarized
@@ -188,16 +187,21 @@ else
   colorscheme zenburn
 endif
 
-"map F5 key to open NERDTree
+" map F3 key to open NERDTree and F2 to display current time
 map <F2> :echo 'Current time is ' . strftime('%c')<CR>
 map <F3> :NERDTree<CR>
+map <F4> :make<CR>
 
-"switch between dark and light solarized by pressing F5
+" map F5 to run the current file with the correct compiler
+autocmd Filetype python setlocal makeprg=python3.5\ %
+autocmd Filetype sh setlocal makeprg=bash\ %
+
+" switch between dark and light solarized by pressing F5
 call togglebg#map("<F5>")
 
-"hide .pyc files
+" hide .pyc files
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 
-"autostart NERDtree in vim
+" autostart NERDtree in vim
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
